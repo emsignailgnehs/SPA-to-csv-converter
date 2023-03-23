@@ -2,12 +2,11 @@
 This is a python reimplementation of the "spa2csv.rb" script
 by ne0dim
 """
-#%%
 import os
 import struct
 from pathlib import Path
 import pandas as pd
-#%%
+
 file_dir = input("Enter the directory containing the .SPA files: \n")
 files = [i for i in os.listdir(file_dir) if i.endswith(".SPA")]
 if files:
@@ -15,10 +14,8 @@ if files:
 else:
     print('No files in directory')
     os._exit(0)
-#%%
 # Looping over the files in the directory
 for file in files:
-    #%%
     print(f"Processing : {file}")
 
     # Opening datafile in binary mode provided as 0 argument
@@ -54,7 +51,7 @@ for file in files:
         else:
             spectrum_type = 'spectrum'
             spectrum_from_values = struct.unpack("<" + "f"*((len(raw_spectrum_from_values[i])-4)//4), raw_spectrum_from_values[i][4:])
-        #%%
+
         # Storing from and values for spectrum to get X axis coordinates
         spectrum_from_value = spectrum_from_values[2]
         spectrum_to_value = spectrum_from_values[3]
