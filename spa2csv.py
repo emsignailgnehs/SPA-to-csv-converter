@@ -8,7 +8,7 @@ import struct
 from pathlib import Path
 import pandas as pd
 #%%
-file_dir = r"C:\Users\Sheng\Desktop\ftir_converter_debugging\folder"
+file_dir = input("Enter the directory containing the .SPA files: \n")
 files = [i for i in os.listdir(file_dir) if i.endswith(".SPA")]
 if files:
     print(f'Files in directory: {files}')
