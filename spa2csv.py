@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 This is a python reimplementation of the "spa2csv.rb" script
 by ne0dim
